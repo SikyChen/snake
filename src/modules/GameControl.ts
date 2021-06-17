@@ -35,6 +35,18 @@ export default class GameControl {
   init () {
     console.log('Start ...')
     document.addEventListener('keydown', this.keydownHandler);
+    (document.getElementById('ArrowUp') as HTMLElement).onclick = () => {
+      this.keydownHandler({key: 'ArrowUp'} as KeyboardEvent);
+    }
+    (document.getElementById('ArrowDown') as HTMLElement).onclick = () => {
+      this.keydownHandler({key: 'ArrowDown'} as KeyboardEvent);
+    }
+    (document.getElementById('ArrowLeft') as HTMLElement).onclick = () => {
+      this.keydownHandler({key: 'ArrowLeft'} as KeyboardEvent);
+    }
+    (document.getElementById('ArrowRight') as HTMLElement).onclick = () => {
+      this.keydownHandler({key: 'ArrowRight'} as KeyboardEvent);
+    }
     this.run();
   }
 
